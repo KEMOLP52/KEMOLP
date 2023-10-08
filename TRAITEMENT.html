@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title> KEMOLP </title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" media="screen" href="LOGIN.css" />
+<br>
+<img src="mecolp.png" alt="Image" height="50" width="300">
+<br>
+<br>
+<hr>
+<table>
+    <div id="CONTENU">
+		<table>
+				<tr>
+					<td>
+			<h1>Traitement</h1>	
+					if (!empty($_POST["Nom"]))
+					{
+						$Nom = $_POST["Nom"];
+						$Prenom = $_POST["Prenom"];
+						$Email = $_POST["Email"];
+						$Date = $_POST["Date de Naissance"];
+
+
+						echo "<h5>NOM : " . $Nom . "</h5>";
+						echo "<h5>PRENOM : " . $Prenom . "</h5>";
+						echo "<h5>Email :" . $Email . "</h5>";
+						echo "<h5>DATE DE NAISSANCE :" . $Date . "</h5>";
+						if(!empty($_POST['option']))
+						{
+							foreach($_POST['option'] as $value)
+							{
+								echo "<h5> --> " .$value."</h5>";
+							}
+						}
+						else{
+							echo "Aucun nom saisi";
+						}
+
+					}
+		</div>
+		</td>
+		</tr>
+		<div id="PIED">
+			<form METHOD="POST" ACTION="INSCRIPTION.html">
+			<input TYPE="SUBMIT" VALUE="REVENIR A L'INSCRIPTION">
+			</form>
+		</div>
+				</table>
+	</body>
+
+</html>
